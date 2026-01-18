@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polygon Token Explorer</title>
+    <link rel="stylesheet" href="style.v2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Polygon Token Explorer</h1>
+            <button id="connect-wallet-btn">Connect Wallet</button>
+        </div>
+        <input type="text" id="search-box" placeholder="Search by name or symbol...">
+        <div class="token-list-container" id="token-list">
+            <!-- Tokens will be loaded here -->
+        </div>
+    </div>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript"></script>
+    <script src="script.v2.js"></script>
+</body>
+</html>

@@ -12,7 +12,8 @@ function generateWorkerCode() {
     
     // Generate import statements
     const imports = [
-        "import listRegistry from \"../build/listRegistry.json\";"
+        "import listRegistry from \"../build/listRegistry.json\";",
+        "import hello from \"./hello.js\";"
     ];
     
     const variableNames = [];
@@ -53,6 +54,10 @@ ${fileMapEntries.join("\n")}
 export default {
     async fetch(request, env, ctx) {
         const url = new URL(request.url);
+
+        if (url.pathname === "/hello") {
+            return hello.fetch(request);
+        }
 
         // Handle OPTIONS requests for ALL paths
         if (request.method === "OPTIONS") {
